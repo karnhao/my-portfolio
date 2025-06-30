@@ -59,28 +59,43 @@ const Navbar = () => {
       {/* Mobile View */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            className="mobile-menu"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.3 }}
-          >
-            <button
-              className="mobile-close-button"
+          <>
+            {/* BACKDROP */}
+            <motion.div
+              className="mobile-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
+            />
+
+            {/* MOBILE MENU */}
+            <motion.div
+              className="mobile-menu"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
             >
-              ✕
-            </button>
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <hr />
-            <strong>Projects</strong>
-            <Link to="/projects/rabbitCageControl" onClick={() => setMobileMenuOpen(false)}> • Rabbit Cage Control</Link>
-            <Link to="/projects/test1" onClick={() => setMobileMenuOpen(false)}> • TEST</Link>
-          </motion.div>
+              <button
+                className="mobile-close-button"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                ✕
+              </button>
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+              <hr />
+              <strong>Projects</strong>
+              <Link to="/projects/rabbitCageControl" onClick={() => setMobileMenuOpen(false)}>Rabbit Cage Control</Link>
+              <Link to="/projects/test1" onClick={() => setMobileMenuOpen(false)}>TEST</Link>
+            </motion.div>
+          </>
         )}
+
       </AnimatePresence>
     </motion.nav>
   );
