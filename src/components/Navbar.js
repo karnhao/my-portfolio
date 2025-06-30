@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isDropdownHovered, setDropdownHovered] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <motion.nav
@@ -17,19 +18,28 @@ const Navbar = () => {
         <Link to="/" className="nav-logo">Sittipat</Link>
       </div>
 
-      <div className="navbar-right">
+      {/* Hamburger Icon */}
+      <div
+        className="navbar-toggle"
+        onClick={() => setMobileMenuOpen((prev) => !prev)}
+      >
+        ☰
+      </div>
+
+      {/* Desktop View */}
+      <div className="navbar-right desktop-only">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
 
         <div
           className="dropdown"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => setDropdownHovered(true)}
+          onMouseLeave={() => setDropdownHovered(false)}
         >
           <span className="dropdown-label">Projects ▾</span>
 
           <AnimatePresence>
-            {isHovered && (
+            {isDropdownHovered && (
               <motion.div
                 className="dropdown-content"
                 initial={{ opacity: 0, y: -5 }}
@@ -39,12 +49,39 @@ const Navbar = () => {
               >
                 <Link to="/projects/rabbitCageControl">Rabbit Cage Control & Management</Link>
                 <Link to="/projects/test1">TEST</Link>
-                <Link to="https://youtu.be/dQw4w9WgXcQ?si=2DbGClLFVySEIYoz" target="_blank">More coming soon...</Link>
+                <Link>More coming soon...</Link>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Mobile View */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="mobile-menu"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.3 }}
+          >
+            <button
+              className="mobile-close-button"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <hr />
+            <strong>Projects</strong>
+            <Link to="/projects/rabbitCageControl" onClick={() => setMobileMenuOpen(false)}> • Rabbit Cage Control</Link>
+            <Link to="/projects/test1" onClick={() => setMobileMenuOpen(false)}> • TEST</Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

@@ -1,6 +1,4 @@
-/* Navbar.css */
 
-/* Overall navbar layout */
 .navbar {
   background-color: #007a8e;
   color: white;
@@ -15,23 +13,19 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Branding on the left */
-.navbar-left .nav-logo {
+.nav-logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
   color: white;
 }
 
-/* Right-aligned nav items */
 .navbar-right {
   display: flex;
   gap: 2rem;
   align-items: center;
-  position: relative;
 }
 
-/* General nav links */
 .navbar a {
   color: white;
   text-decoration: none;
@@ -43,13 +37,10 @@
   opacity: 0.85;
 }
 
-/* Dropdown container */
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
-/* Dropdown toggle label */
 .dropdown-label {
   cursor: pointer;
   user-select: none;
@@ -57,22 +48,20 @@
   color: white;
 }
 
-/* Dropdown menu */
 .dropdown-content {
   position: absolute;
-  top: 1.5rem;
+  top: 2.5rem;
   right: 0;
   background-color: white;
   color: #007a8e;
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  min-width: 256px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
   flex-direction: column;
   z-index: 1001;
-  display: flex; /* default, so framer-motion can animate it */
+  display: flex;
   padding: 0.5rem 0;
 }
-
 
 .dropdown-content a {
   padding: 0.75rem 1rem;
@@ -86,8 +75,93 @@
   background-color: #f0f0f0;
 }
 
-/* Keep dropdown open when hovering over it or its trigger */
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
+.navbar-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 260px;
+  background: rgba(0, 122, 142, 0.95); /* deep blue glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem 2rem;
+  gap: 1.5rem;
+  z-index: 9999;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.25);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.0rem;
+  font-weight: 500;
+  padding: 0.0rem 0;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.mobile-menu a:hover {
+  border-bottom: 1px solid white;
+  transform: translateX(6px);
+  opacity: 0.9;
+}
+
+.mobile-menu strong {
+  font-size: 1.0rem;
+  opacity: 0.75;
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.mobile-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10001;
+}
+
+.mobile-close-button:hover {
+  transform: scale(1.2);
+}
+
+.mobile-menu hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  margin: 1rem 0;
+  width: 100%;
+  align-self: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .navbar-right {
+    display: none;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
 }
