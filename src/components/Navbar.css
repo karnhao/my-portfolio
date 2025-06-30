@@ -1,40 +1,93 @@
+/* Navbar.css */
+
+/* Overall navbar layout */
 .navbar {
-  background: #007a8e;
-  padding: 1rem;
+  background-color: #007a8e;
+  color: white;
   display: flex;
-  gap: 2rem;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Branding on the left */
+.navbar-left .nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
   color: white;
 }
 
+/* Right-aligned nav items */
+.navbar-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+/* General nav links */
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: opacity 0.2s ease;
 }
 
+.navbar a:hover {
+  opacity: 0.85;
+}
+
+/* Dropdown container */
 .dropdown {
   position: relative;
-  cursor: pointer;
+  display: inline-block;
 }
 
+/* Dropdown toggle label */
+.dropdown-label {
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  color: white;
+}
+
+/* Dropdown menu */
 .dropdown-content {
   position: absolute;
-  display: none;
-  flex-direction: column;
-  background: white;
+  top: 1.5rem;
+  right: 0;
+  background-color: white;
   color: #007a8e;
-  min-width: 180px;
-  margin-top: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 256px;
+  flex-direction: column;
+  z-index: 1001;
+  display: flex; /* default, so framer-motion can animate it */
+  padding: 0.5rem 0;
 }
+
 
 .dropdown-content a {
-  padding: 0.5rem;
-  text-decoration: none;
+  padding: 0.75rem 1rem;
   color: #007a8e;
+  text-decoration: none;
+  font-weight: normal;
+  transition: background 0.3s;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Keep dropdown open when hovering over it or its trigger */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
   display: flex;
 }

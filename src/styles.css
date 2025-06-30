@@ -1,4 +1,4 @@
-/* styles.css */
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +7,11 @@ body {
   color: #333;
   line-height: 1.6;
 }
+
+main {
+  padding-bottom: 80px;
+}
+
 
 header {
   background: linear-gradient(135deg, #4facfe, #00f2fe);
@@ -23,7 +28,7 @@ header h1 {
 
 section {
   padding: 2rem 4rem;
-  max-width: 900px;
+  max-width: 90%;
   margin: 0 auto;
   background: white;
   margin-top: 2rem;
@@ -55,14 +60,22 @@ a:hover {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem 2rem;
   background: #f1f1f1;
   color: #555;
   font-size: 0.9rem;
-  margin-top: 4rem;
   border-top: 1px solid #ddd;
+  z-index: 999;
 }
+
+
+
+
 
 .footer a {
   color: #007a8e;
@@ -71,6 +84,15 @@ a:hover {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.project-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 
