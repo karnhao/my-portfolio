@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import './styles.css';
 import './App.css';
 import Navbar from './components/Navbar.js';
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <Router>
+        <HashRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
-        </Router>
+        </HashRouter>
       </main>
     </div>
   );
