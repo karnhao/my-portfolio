@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
+const mainLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
+];
+
+const projectLinks = [
+  { to: '/projects/rabbitCageControl', label: 'Rabbit Cage Control & Management' },
+  { to: '/projects/test1', label: 'TEST' },
+  { to: '', label: 'More coming soon...', disabled: true },
+];
+
 const Navbar = () => {
   const [isDropdownHovered, setDropdownHovered] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,8 +40,9 @@ const Navbar = () => {
 
       {/* Desktop View */}
       <div className="navbar-right desktop-only">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        {mainLinks.map(link => (
+          <Link key={link.to} to={link.to}>{link.label}</Link>
+        ))}
 
         <div
           className="dropdown"
@@ -47,9 +60,14 @@ const Navbar = () => {
                 exit={{ opacity: 0, y: -5 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link to="/projects/rabbitCageControl">Rabbit Cage Control & Management</Link>
-                <Link to="/projects/test1">TEST</Link>
-                <Link>More coming soon...</Link>
+                {projectLinks.map(link =>
+                  link.disabled ? (
+                    
+                    <Link>{link.label}</Link>
+                  ) : (
+                    <Link key={link.to} to={link.to}>{link.label}</Link>
+                  )
+                )}
               </motion.div>
             )}
           </AnimatePresence>
@@ -86,16 +104,29 @@ const Navbar = () => {
               >
                 ✕
               </button>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+              {mainLinks.map(link => (
+                <Link key={link.to} to={link.to} onClick={() => setMobileMenuOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
               <hr />
               <strong>Projects</strong>
-              <Link to="/projects/rabbitCageControl" onClick={() => setMobileMenuOpen(false)}>Rabbit Cage Control</Link>
-              <Link to="/projects/test1" onClick={() => setMobileMenuOpen(false)}>TEST</Link>
+              {projectLinks.map(link =>
+                link.disabled ? (
+                  <span key={link.label} style={{ opacity: 0.5 }}>{link.label}</span>
+                ) : (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </motion.div>
           </>
         )}
-
       </AnimatePresence>
     </motion.nav>
   );

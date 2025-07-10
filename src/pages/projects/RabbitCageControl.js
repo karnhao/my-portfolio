@@ -10,7 +10,7 @@ const RabbitCageControl = () => (
 
             <div>
                 <div>
-                    <h4>🚀 Technologies Used</h4>
+                    <h4>Technologies Used</h4>
                     <ul>
                         <li>ESP32 Microcontroller</li>
                         <li>Node.js Backend</li>
@@ -19,7 +19,7 @@ const RabbitCageControl = () => (
                         <li>Discord Webhook API</li>
                     </ul>
 
-                    <h4>🧠 Features</h4>
+                    <h4>Features</h4>
                     <ul>
                         <li>Voice assistant integration (e.g., Siri) to remotely release food</li>
                         <li>Real-time temperature monitoring of the cage environment</li>
@@ -44,7 +44,7 @@ const RabbitCageControl = () => (
 
 
             <p>
-                This project combines low-level hardware programming with web-based control logic, all wrapped in a playful yet practical real-world use case. 🐾
+                This project combines low-level hardware programming with web-based control logic, all wrapped in a playful yet practical real-world use case.
             </p>
         </section>
     </main>

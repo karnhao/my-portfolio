@@ -4,8 +4,8 @@ const AboutPage = () => (
   <main className="fade-in">
     <section>
       <h2>About Me</h2>
-      <p>I’m Sittipat Tapsutar, a Thai developer passionate about code, creativity, and clean UX. Currently pursuing a CS degree at Kasetsart University, I spend my time writing code, designing tools, and occasionally bonding with turtles (okay, just in spirit 🐢).</p>
-      <p>My specialties include Java, JavaScript, TypeScript, and building quirky yet practical projects like Online Chess Game, Minecraft plugins and iOS widgets for university life.</p>
+      <p>I’m Sittipat Tapsutar, a Thai developer passionate about code, creativity, and clean UX. Currently pursuing a CS degree at Kasetsart University, I spend my time writing code, designing tools.</p>
+      <p>My specialties include Java, JavaScript, TypeScript, Python, C, C++, and building quirky yet practical projects like Online Chess Game, Minecraft plugins and iOS widgets for university life.</p>
       <p>Beyond tech, I'm a fan of problem solving, storytelling, and visual design. My mission is to blend functionality with playfulness to make helpful things more delightful.</p>
     </section>
   </main>
