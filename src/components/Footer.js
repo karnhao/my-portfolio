@@ -9,7 +9,7 @@ const Footer = () => (
         GitHub
       </a>
       <span> | </span>
-      <a href="linkedin.com/in/sittipat-tepsutar-8aa100335" target="_blank" rel="noopener noreferrer">
+      <a href="https://linkedin.com/in/sittipat-tepsutar-8aa100335" target="_blank" rel="noopener noreferrer">
         Linkedin
       </a>
     </p>
