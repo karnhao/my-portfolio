@@ -11,6 +11,7 @@ const mainLinks = [
 
 const projectLinks = [
   { to: '/projects/rabbitCageControl', label: 'Rabbit Cage Control & Management' },
+  { to: '/projects/sortingVisualizer', label: 'Sorting Visualizer' },
   { to: '/projects/test1', label: 'TEST' },
   { to: '', label: 'More coming soon...', disabled: true },
 ];

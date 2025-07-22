@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import RabbitCageControl from './projects/RabbitCageControl';
 import Test1 from './projects/Test1';
+import SortingVisualizer from './projects/SortingVisualizer';
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -9,6 +10,8 @@ const ProjectDetail = () => {
   switch (projectId) {
     case "rabbitCageControl":
       return <RabbitCageControl />;
+    case "sortingVisualizer":
+      return <SortingVisualizer />;
     case "test1":
       return <Test1 />;
     default:
