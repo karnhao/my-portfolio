@@ -1,0 +1,88 @@
+
+
+.intro {
+  padding: 2rem;
+  text-align: center;
+}
+
+.projects {
+  padding: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start; /* first card at top */
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.30);
+}
+
+.project-card:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+.project-card:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+.home-project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: block;
+  margin-top: 0;
+}
+
+
+
+.home-project-image img {
+  height: 180px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+
+.project-info h4 {
+  margin: 0 0 0.5rem;
+}
+
+/* Mobile view: single column */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

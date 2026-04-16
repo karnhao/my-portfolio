@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import RabbitCageControl from './projects/RabbitCageControl';
 import Test1 from './projects/Test1';
 import SortingVisualizer from './projects/SortingVisualizer';
+import MusicEventManagement from './projects/MusicEventManagement';
+import OnlineChessGame from './projects/OnlineChessGame';
+import ResearchShowcase from './projects/ResearchShowcase';
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -14,6 +17,12 @@ const ProjectDetail = () => {
       return <SortingVisualizer />;
     case "test1":
       return <Test1 />;
+    case "musiceventmanagement":
+      return <MusicEventManagement />;
+    case "onlinechessgame":
+      return <OnlineChessGame />
+    case "cooperativeresearch":
+      return <ResearchShowcase />
     default:
       break;
   }
