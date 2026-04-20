@@ -11,6 +11,7 @@ const mainLinks = [
 
 const projectLinks = [
   { to: '/projects/cooperativeresearch', label: 'Cooperative Research at South Korea' },
+  { to: '/projects/riskarea', label: 'Real-Time Risk Area Detection & Navigation System' },
   { to: '/projects/rabbitCageControl', label: 'Rabbit Cage Control & Management' },
   { to: '/projects/sortingVisualizer', label: 'Sorting Visualizer' },
   { to: '', label: 'More coming soon...', disabled: true },

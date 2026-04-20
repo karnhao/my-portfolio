@@ -3,7 +3,7 @@ import React from 'react';
 const RabbitCageControl = () => (
     <main className="fade-in">
         <section>
-            <h2>🐇 Rabbit Cage Control & Management</h2>
+            <h2>Rabbit Cage Control & Management</h2>
             <p>
                 An automation system designed as part of an Internet of Things course. This project allows remote interaction and monitoring of a rabbit enclosure using voice commands and Discord integrations.
             </p>

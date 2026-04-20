@@ -6,6 +6,7 @@ import SortingVisualizer from './projects/SortingVisualizer';
 import MusicEventManagement from './projects/MusicEventManagement';
 import OnlineChessGame from './projects/OnlineChessGame';
 import ResearchShowcase from './projects/ResearchShowcase';
+import RiskAreaDetection from './projects/RiskAreaDetection';
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -23,6 +24,8 @@ const ProjectDetail = () => {
       return <OnlineChessGame />
     case "cooperativeresearch":
       return <ResearchShowcase />
+    case "riskarea":
+      return <RiskAreaDetection />
     default:
       break;
   }

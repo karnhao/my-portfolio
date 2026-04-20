@@ -1,13 +1,14 @@
+import './ResearchShowcase.css';
 const SortingVisualizer = () => (
-  <main className="fade-in">
-    <section>
-      <h2>Sorting Algorithm Visualizer</h2>
-      <p>
-        A javafx application that visualizes various sorting algorithms in action. Users can select different algorithms and see how they sort a list of numbers in real-time.
-      </p>
+    <main className="fade-in">
+        <section>
+            <h2>Sorting Algorithm Visualizer</h2>
+            <p>
+                A javafx application that visualizes various sorting algorithms in action. Users can select different algorithms and see how they sort a list of numbers in real-time.
+            </p>
 
-      <div>
-                <div>
+            <div className="research-content">
+                <div className="research-text">
                     <h4>Technologies Used</h4>
                     <ul>
                         <li>JavaFX for GUI</li>
@@ -23,9 +24,19 @@ const SortingVisualizer = () => (
                         <li>Real-time updates of the sorting process</li>
                     </ul>
                 </div>
+                <div className="research-image">
+                    <img
+                        src={process.env.PUBLIC_URL + "/images/quick-sort-snapshot.png"}
+                        alt="Snapshot of sorting visualizer"
+                        className="project-image"
+                    />
+                </div>
+
             </div>
-    </section>
-  </main>
+
+
+        </section>
+    </main>
 );
 
 export default SortingVisualizer;

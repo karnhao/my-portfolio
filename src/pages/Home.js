@@ -3,13 +3,6 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 
 const projects = [
-  
-  {
-    title: "Rabbit Cage Control",
-    description: "IoT automation system for monitoring and feeding rabbits remotely with Discord integration.",
-    image: process.env.PUBLIC_URL + "/images/esp32-setup.jpg",
-    url: "/projects/cooperativeresearch"
-  },
   {
     title: "Object Detection Robustness",
     description: "Research project on robustness of object detection models under noise and adversarial conditions.",
@@ -18,15 +11,21 @@ const projects = [
   },
   {
     title: "Real-Time Risk Area Detection and Navigation System Using Geospatial Prediction",
-    description: "Coming soon",
-    image: process.env.PUBLIC_URL + "/images/placeholder.png",
-    url: null
+    description: "This project delivers a web-based application designed to enhance public safety by integrating geospatial prediction with real-time navigation.",
+    image: process.env.PUBLIC_URL + "/images/risk-map-example.png",
+    url: "/projects/riskarea"
+  },
+  {
+    title: "Rabbit Cage Control",
+    description: "IoT automation system for monitoring and feeding rabbits remotely with Discord integration.",
+    image: process.env.PUBLIC_URL + "/images/esp32-setup.jpg",
+    url: "/projects/rabbitCageControl"
   },
   {
     title: "Sorting Algorithm Visualizer",
-    description: "Coming soon",
-    image: process.env.PUBLIC_URL + "/images/placeholder.png",
-    url: null
+    description: "A javafx application that visualizes various sorting algorithms in action.",
+    image: process.env.PUBLIC_URL + "/images/quick-sort-snapshot.png",
+    url: "/projects/sortingVisualizer"
   },
   {
     title: "Portfolio Website",
@@ -35,8 +34,14 @@ const projects = [
     url: null
   },
   {
+    title: "Online Chess Game",
+    description: "Coming soon.",
+    image: process.env.PUBLIC_URL + "/images/placeholder.png",
+    url: null
+  },
+  {
     title: "There are still many more!",
-    description: "Coming soon when I have time",
+    description: "Coming soon.",
     image: process.env.PUBLIC_URL + "/images/placeholder.png",
     url: null
   },
@@ -58,6 +63,12 @@ const Home = () => (
             key={index}
             to={proj.url}
             className="project-card"
+            onClick={() => { proj.url &&
+              window.scroll({
+                top: 0,
+                behavior: "smooth"
+              });
+            }}
           >
             <img src={proj.image} alt={proj.title} className="home-project-image" />
             <div className="project-info">
